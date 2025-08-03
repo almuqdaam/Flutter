@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوجِس - خدمات عُمان الأساسية، بلمسة زر</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h2>لوجِس</h2>
+                <span class="nav-subtitle">Logis</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link">الرئيسية</a>
+                <a href="#services" class="nav-link">الخدمات</a>
+                <a href="#about" class="nav-link">عن لوجِس</a>
+                <a href="#contact" class="nav-link">اتصل بنا</a>
+                <button class="btn-primary" onclick="showLoginModal()">تسجيل الدخول</button>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">خدمات عُمان الأساسية،<br><span class="highlight">بلمسة زر</span></h1>
+                <p class="hero-description">
+                    تواصل مع مزودي الخدمات الموثوق بهم لتوصيل الغاز، صهاريج المياه، خدمات الصرف الصحي، وخدمات نقل الأثاث في جميع أنحاء عُمان.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-primary btn-large" onclick="showServices()">ابدأ الآن</button>
+                    <button class="btn-secondary btn-large" onclick="showDemo()">شاهد العرض التوضيحي</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="phone-mockup">
+                    <div class="phone-screen">
+                        <div class="app-preview">
+                            <div class="app-header">
+                                <h3>لوجِس</h3>
+                            </div>
+                            <div class="service-grid">
+                                <div class="service-card">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <span>توصيل الغاز</span>
+                                </div>
+                                <div class="service-card">
+                                    <i class="fas fa-tint"></i>
+                                    <span>صهاريج المياه</span>
+                                </div>
+                                <div class="service-card">
+                                    <i class="fas fa-toilet"></i>
+                                    <span>خدمات الصرف الصحي</span>
+                                </div>
+                                <div class="service-card">
+                                    <i class="fas fa-truck"></i>
+                                    <span>خدمات النقل</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>خدماتنا</h2>
+                <p>خدمات أساسية للمرافق واللوجستيات في متناول يدك</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-item" onclick="selectService("gas")">
+                    <div class="service-icon">
+                        <i class="fas fa-gas-pump"></i>
+                    </div>
+                    <h3>توصيل الغاز</h3>
+                    <p>اطلب اسطوانات غاز البترول المسال للمنزل أو العمل مع خدمة توصيل سريعة وموثوقة في جميع أنحاء عُمان.</p>
+                    <div class="service-features">
+                        <span><i class="fas fa-check"></i> توصيل في نفس اليوم</span>
+                        <span><i class="fas fa-check"></i> مزودون مرخصون</span>
+                        <span><i class="fas fa-check"></i> أسعار تنافسية</span>
+                    </div>
+                </div>
+                
+                <div class="service-item" onclick="selectService("water")">
+                    <div class="service-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>صهاريج المياه</h3>
+                    <p>احصل على مياه نظيفة يتم توصيلها إلى موقعك من خلال شبكتنا من موردي المياه المعتمدين.</p>
+                    <div class="service-features">
+                        <span><i class="fas fa-check"></i> مياه نظيفة ومختبرة</span>
+                        <span><i class="fas fa-check"></i> أحجام خزانات متنوعة</span>
+                        <span><i class="fas fa-check"></i> خدمة طوارئ</span>
+                    </div>
+                </div>
+                
+                <div class="service-item" onclick="selectService("sewage")">
+                    <div class="service-icon">
+                        <i class="fas fa-toilet"></i>
+                    </div>
+                    <h3>خدمات الصرف الصحي</h3>
+                    <p>خدمات احترافية لإدارة الصرف الصحي والنفايات للعقارات السكنية والتجارية.</p>
+                    <div class="service-features">
+                        <span><i class="fas fa-check"></i> متوفرة 24/7</span>
+                        <span><i class="fas fa-check"></i> التخلص الصديق للبيئة</span>
+                        <span><i class="fas fa-check"></i> مشغلون مرخصون</span>
+                    </div>
+                </div>
+                
+                <div class="service-item" onclick="selectService("moving")">
+                    <div class="service-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>خدمات النقل</h3>
+                    <p>خدمات نقل الأثاث والمنازل الاحترافية مع فرق ذوي خبرة ومعدات مناسبة.</p>
+                    <div class="service-features">
+                        <span><i class="fas fa-check"></i> ناقلون مدربون</span>
+                        <span><i class="fas fa-check"></i> تغطية تأمينية</span>
+                        <span><i class="fas fa-check"></i> جدولة مرنة</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>كيف تعمل</h2>
+                <p>خطوات بسيطة للحصول على الخدمة التي تحتاجها</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>اختر الخدمة</h3>
+                    <p>اختر الخدمة التي تحتاجها من فئاتنا الأربع الرئيسية</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>ابحث عن مزود</h3>
+                    <p>تصفح مزودي الخدمات القريبين مع التقييمات والأسعار</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>احجز وتتبع</h3>
+                    <p>حدد موعد خدمتك وتتبع مزود الخدمة في الوقت الفعلي</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>قيم وادفع</h3>
+                    <p>أكمل الدفع وقيم تجربتك</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="demo-section" style="display: none;">
+        <div class="container">
+            <div class="demo-container">
+                <div class="demo-header">
+                    <h2>عرض توضيحي تفاعلي</h2>
+                    <p>جرب تدفق تطبيق لوجِس</p>
+                    <button class="close-demo" onclick="hideDemo()">×</button>
+                </div>
+                <div class="demo-content">
+                    <div class="demo-phone">
+                        <div class="demo-screen" id="demoScreen">
+                            <!-- Demo content will be loaded here -->
+                        </div>
+                    </div>
+                    <div class="demo-controls">
+                        <button class="demo-btn" onclick="showDemoStep("home")">الرئيسية</button>
+                        <button class="demo-btn" onclick="showDemoStep("services")">الخدمات</button>
+                        <button class="demo-btn" onclick="showDemoStep("providers")">المزودون</button>
+                        <button class="demo-btn" onclick="showDemoStep("booking")">الحجز</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>عن لوجِس</h2>
+                    <p>
+                        يعالج لوجِس فجوة حرجة في قطاع الخدمات في عُمان من خلال توفير منصة مركزية وسهلة الاستخدام 
+                        تربط الأفراد بخدمات المرافق واللوجستيات الأساسية عند الطلب.
+                    </p>
+                    <p>
+                        مهمتنا هي تحويل كيفية وصول العمانيين إلى الخدمات الأساسية، مما يجعلها أكثر سهولة وموثوقية وشفافية من خلال التكنولوجيا.
+                    </p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h3>4</h3>
+                            <p>فئات الخدمة</p>
+                        </div>
+                        <div class="stat">
+                            <h3>100+</h3>
+                            <p>مزود شريك</p>
+                        </div>
+                        <div class="stat">
+                            <h3>24/7</h3>
+                            <p>دعم العملاء</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="feature-showcase">
+                        <div class="feature">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>تتبع في الوقت الفعلي</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-star"></i>
+                            <span>تقييمات المزودين</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>مدفوعات آمنة</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-clock"></i>
+                            <span>جدولة مرنة</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>تواصل معنا</h2>
+                <p>هل أنت مستعد للانضمام إلى شبكة لوجِس أو لديك أسئلة؟</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>البريد الإلكتروني</h4>
+                            <p>info@logis.om</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>الهاتف</h4>
+                            <p>+968 9XXX XXXX</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>الموقع</h4>
+                            <p>مسقط، عُمان</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form onsubmit="submitContact(event)">
+                        <input type="text" placeholder="اسمك" required>
+                        <input type="email" placeholder="بريدك الإلكتروني" required>
+                        <select required>
+                            <option value="">أنا مهتم بـ...</option>
+                            <option value="customer">استخدام لوجِس كعميل</option>
+                            <option value="provider">أن أصبح مزود خدمة</option>
+                            <option value="investor">فرص الاستثمار</option>
+                            <option value="partnership">فرص الشراكة</option>
+                        </select>
+                        <textarea placeholder="رسالتك" rows="4" required></textarea>
+                        <button type="submit" class="btn-primary">إرسال الرسالة</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>لوجِس</h3>
+                    <p>خدمات عُمان الأساسية، بلمسة زر</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>الخدمات</h4>
+                        <a href="#services">توصيل الغاز</a>
+                        <a href="#services">صهاريج المياه</a>
+                        <a href="#services">خدمات الصرف الصحي</a>
+                        <a href="#services">خدمات النقل</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>الشركة</h4>
+                        <a href="#about">عنا</a>
+                        <a href="#contact">اتصل بنا</a>
+                        <a href="#">سياسة الخصوصية</a>
+                        <a href="#">شروط الخدمة</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>تواصل</h4>
+                        <a href="#"><i class="fab fa-twitter"></i> تويتر</a>
+                        <a href="#"><i class="fab fa-linkedin"></i> لينكد إن</a>
+                        <a href="#"><i class="fab fa-instagram"></i> انستغرام</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 لوجِس. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>مرحباً بك في لوجِس</h3>
+                <span class="close" onclick="hideLoginModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" onclick="showLogin()">تسجيل الدخول</button>
+                    <button class="auth-tab" onclick="showRegister()">التسجيل</button>
+                </div>
+                <div id="loginForm" class="auth-form">
+                    <input type="email" placeholder="البريد الإلكتروني" required>
+                    <input type="password" placeholder="كلمة المرور" required>
+                    <button class="btn-primary btn-full" onclick="login()">تسجيل الدخول</button>
+                    <p class="auth-link">ليس لديك حساب؟ <a href="#" onclick="showRegister()">سجل هنا</a></p>
+                </div>
+                <div id="registerForm" class="auth-form" style="display: none;">
+                    <input type="text" placeholder="الاسم الكامل" required>
+                    <input type="email" placeholder="البريد الإلكتروني" required>
+                    <input type="tel" placeholder="رقم الهاتف" required>
+                    <input type="password" placeholder="كلمة المرور" required>
+                    <input type="password" placeholder="تأكيد كلمة المرور" required>
+                    <button class="btn-primary btn-full" onclick="register()">التسجيل</button>
+                    <p class="auth-link">هل لديك حساب بالفعل؟ <a href="#" onclick="showLogin()">سجل الدخول هنا</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

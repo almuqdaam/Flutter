@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-key="page_title">لوجِس - خدمات عُمان الأساسية، بلمسة زر</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h2 data-lang-key="logis_brand_ar">لوجِس</h2>
+                <span class="nav-subtitle" data-lang-key="logis_brand_en">Logis</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link" data-lang-key="nav_home">الرئيسية</a>
+                <a href="#services" class="nav-link" data-lang-key="nav_services">الخدمات</a>
+                <a href="#about" class="nav-link" data-lang-key="nav_about">عن لوجِس</a>
+                <a href="#contact" class="nav-link" data-lang-key="nav_contact">اتصل بنا</a>
+                <button class="btn-primary" onclick="showLoginModal()" data-lang-key="nav_login">تسجيل الدخول</button>
+                <div class="language-switcher">
+                    <button class="lang-button active" data-lang="ar">AR</button>
+                    <button class="lang-button" data-lang="en">EN</button>
+                </div>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title" data-lang-key="hero_title_part1">خدمات عُمان الأساسية،<br><span class="highlight" data-lang-key="hero_title_part2">بلمسة زر</span></h1>
+                <p class="hero-description" data-lang-key="hero_description">
+                    تواصل مع مزودي الخدمات الموثوق بهم لتوصيل الغاز، صهاريج المياه، خدمات الصرف الصحي، وخدمات نقل الأثاث في جميع أنحاء عُمان.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-primary btn-large" onclick="showServices()" data-lang-key="hero_get_started">ابدأ الآن</button>
+                    <button class="btn-secondary btn-large" onclick="showDemo()" data-lang-key="hero_watch_demo">شاهد العرض التوضيحي</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="phone-mockup">
+                    <div class="phone-screen">
+                        <div class="app-preview">
+                            <div class="app-header">
+                                <h3 data-lang-key="logis_brand_ar_app">لوجِس</h3>
+                            </div>
+                            <div class="service-grid">
+                                <div class="service-card">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <span data-lang-key="service_gas_delivery">توصيل الغاز</span>
+                                </div>
+                                <div class="service-card">
+                                    <i class="fas fa-tint"></i>
+                                    <span data-lang-key="service_water_tanker">صهاريج المياه</span>
+                                </div>
+                                <div class="service-card">
+                                    <i class="fas fa-toilet"></i>
+                                    <span data-lang-key="service_sewage">خدمات الصرف الصحي</span>
+                                </div>
+                                <div class="service-card">
+                                    <i class="fas fa-truck"></i>
+                                    <span data-lang-key="service_moving">خدمات النقل</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-lang-key="our_services_title">خدماتنا</h2>
+                <p data-lang-key="our_services_description">خدمات أساسية للمرافق واللوجستيات في متناول يدك</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-item" onclick="selectService("gas")">
+                    <div class="service-icon">
+                        <i class="fas fa-gas-pump"></i>
+                    </div>
+                    <h3 data-lang-key="service_gas_delivery_title">توصيل الغاز</h3>
+                    <p data-lang-key="service_gas_delivery_desc">اطلب اسطوانات غاز البترول المسال للمنزل أو العمل مع خدمة توصيل سريعة وموثوقة في جميع أنحاء عُمان.</p>
+                    <div class="service-features">
+                        <span data-lang-key="feature_same_day_delivery"><i class="fas fa-check"></i> توصيل في نفس اليوم</span>
+                        <span data-lang-key="feature_licensed_providers"><i class="fas fa-check"></i> مزودون مرخصون</span>
+                        <span data-lang-key="feature_competitive_pricing"><i class="fas fa-check"></i> أسعار تنافسية</span>
+                    </div>
+                </div>
+                
+                <div class="service-item" onclick="selectService("water")">
+                    <div class="service-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3 data-lang-key="service_water_tanker_title">صهاريج المياه</h3>
+                    <p data-lang-key="service_water_tanker_desc">احصل على مياه نظيفة يتم توصيلها إلى موقعك من خلال شبكتنا من موردي المياه المعتمدين.</p>
+                    <div class="service-features">
+                        <span data-lang-key="feature_clean_water"><i class="fas fa-check"></i> مياه نظيفة ومختبرة</span>
+                        <span data-lang-key="feature_various_tank_sizes"><i class="fas fa-check"></i> أحجام خزانات متنوعة</span>
+                        <span data-lang-key="feature_emergency_service"><i class="fas fa-check"></i> خدمة طوارئ</span>
+                    </div>
+                </div>
+                
+                <div class="service-item" onclick="selectService("sewage")">
+                    <div class="service-icon">
+                        <i class="fas fa-toilet"></i>
+                    </div>
+                    <h3 data-lang-key="service_sewage_title">خدمات الصرف الصحي</h3>
+                    <p data-lang-key="service_sewage_desc">خدمات احترافية لإدارة الصرف الصحي والنفايات للعقارات السكنية والتجارية.</p>
+                    <div class="service-features">
+                        <span data-lang-key="feature_24_7_availability"><i class="fas fa-check"></i> متوفرة 24/7</span>
+                        <span data-lang-key="feature_eco_friendly_disposal"><i class="fas fa-check"></i> التخلص الصديق للبيئة</span>
+                        <span data-lang-key="feature_licensed_operators"><i class="fas fa-check"></i> مشغلون مرخصون</span>
+                    </div>
+                </div>
+                
+                <div class="service-item" onclick="selectService("moving")">
+                    <div class="service-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 data-lang-key="service_moving_title">خدمات النقل</h3>
+                    <p data-lang-key="service_moving_desc">خدمات نقل الأثاث والمنازل الاحترافية مع فرق ذوي خبرة ومعدات مناسبة.</p>
+                    <div class="service-features">
+                        <span data-lang-key="feature_trained_movers"><i class="fas fa-check"></i> ناقلون مدربون</span>
+                        <span data-lang-key="feature_insurance_coverage"><i class="fas fa-check"></i> تغطية تأمينية</span>
+                        <span data-lang-key="feature_flexible_scheduling"><i class="fas fa-check"></i> جدولة مرنة</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-lang-key="how_it_works_title">كيف تعمل</h2>
+                <p data-lang-key="how_it_works_description">خطوات بسيطة للحصول على الخدمة التي تحتاجها</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3 data-lang-key="step1_title">اختر الخدمة</h3>
+                    <p data-lang-key="step1_desc">اختر الخدمة التي تحتاجها من فئاتنا الأربع الرئيسية</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3 data-lang-key="step2_title">ابحث عن مزود</h3>
+                    <p data-lang-key="step2_desc">تصفح مزودي الخدمات القريبين مع التقييمات والأسعار</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3 data-lang-key="step3_title">احجز وتتبع</h3>
+                    <p data-lang-key="step3_desc">حدد موعد خدمتك وتتبع مزود الخدمة في الوقت الفعلي</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3 data-lang-key="step4_title">قيم وادفع</h3>
+                    <p data-lang-key="step4_desc">أكمل الدفع وقيم تجربتك</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="demo-section" style="display: none;">
+        <div class="container">
+            <div class="demo-container">
+                <div class="demo-header">
+                    <h2 data-lang-key="demo_title">عرض توضيحي تفاعلي</h2>
+                    <p data-lang-key="demo_description">جرب تدفق تطبيق لوجِس</p>
+                    <button class="close-demo" onclick="hideDemo()">×</button>
+                </div>
+                <div class="demo-content">
+                    <div class="demo-phone">
+                        <div class="demo-screen" id="demoScreen">
+                            <!-- Demo content will be loaded here -->
+                        </div>
+                    </div>
+                    <div class="demo-controls">
+                        <button class="demo-btn" onclick="showDemoStep("home")" data-lang-key="demo_home_btn">الرئيسية</button>
+                        <button class="demo-btn" onclick="showDemoStep("services")" data-lang-key="demo_services_btn">الخدمات</button>
+                        <button class="demo-btn" onclick="showDemoStep("providers")" data-lang-key="demo_providers_btn">المزودون</button>
+                        <button class="demo-btn" onclick="showDemoStep("booking")" data-lang-key="demo_booking_btn">الحجز</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 data-lang-key="about_title">عن لوجِس</h2>
+                    <p data-lang-key="about_desc1">
+                        يعالج لوجِس فجوة حرجة في قطاع الخدمات في عُمان من خلال توفير منصة مركزية وسهلة الاستخدام 
+                        تربط الأفراد بخدمات المرافق واللوجستيات الأساسية عند الطلب.
+                    </p>
+                    <p data-lang-key="about_desc2">
+                        مهمتنا هي تحويل كيفية وصول العمانيين إلى الخدمات الأساسية، مما يجعلها أكثر سهولة وموثوقية وشفافية من خلال التكنولوجيا.
+                    </p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h3 data-lang-key="stat_categories_num">4</h3>
+                            <p data-lang-key="stat_categories_text">فئات الخدمة</p>
+                        </div>
+                        <div class="stat">
+                            <h3 data-lang-key="stat_providers_num">100+</h3>
+                            <p data-lang-key="stat_providers_text">مزود شريك</p>
+                        </div>
+                        <div class="stat">
+                            <h3 data-lang-key="stat_support_num">24/7</h3>
+                            <p data-lang-key="stat_support_text">دعم العملاء</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="feature-showcase">
+                        <div class="feature">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span data-lang-key="feature_realtime_tracking">تتبع في الوقت الفعلي</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-star"></i>
+                            <span data-lang-key="feature_provider_ratings">تقييمات المزودين</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span data-lang-key="feature_secure_payments">مدفوعات آمنة</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-clock"></i>
+                            <span data-lang-key="feature_flexible_scheduling">جدولة مرنة</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-lang-key="contact_title">تواصل معنا</h2>
+                <p data-lang-key="contact_description">هل أنت مستعد للانضمام إلى شبكة لوجِس أو لديك أسئلة؟</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4 data-lang-key="contact_email_title">البريد الإلكتروني</h4>
+                            <p data-lang-key="contact_email_address">info@logis.om</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4 data-lang-key="contact_phone_title">الهاتف</h4>
+                            <p data-lang-key="contact_phone_number">+968 9XXX XXXX</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4 data-lang-key="contact_location_title">الموقع</h4>
+                            <p data-lang-key="contact_location_address">مسقط، عُمان</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form onsubmit="submitContact(event)">
+                        <input type="text" placeholder="اسمك" required data-lang-key="contact_form_name_placeholder">
+                        <input type="email" placeholder="بريدك الإلكتروني" required data-lang-key="contact_form_email_placeholder">
+                        <select required data-lang-key="contact_form_interest_placeholder">
+                            <option value="">أنا مهتم بـ...</option>
+                            <option value="customer" data-lang-key="contact_form_interest_customer">استخدام لوجِس كعميل</option>
+                            <option value="provider" data-lang-key="contact_form_interest_provider">أن أصبح مزود خدمة</option>
+                            <option value="investor" data-lang-key="contact_form_interest_investor">فرص الاستثمار</option>
+                            <option value="partnership" data-lang-key="contact_form_interest_partnership">فرص الشراكة</option>
+                        </select>
+                        <textarea placeholder="رسالتك" rows="4" required data-lang-key="contact_form_message_placeholder"></textarea>
+                        <button type="submit" class="btn-primary" data-lang-key="contact_form_submit_btn">إرسال الرسالة</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 data-lang-key="logis_brand_ar_footer">لوجِس</h3>
+                    <p data-lang-key="footer_tagline">خدمات عُمان الأساسية، بلمسة زر</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4 data-lang-key="footer_services_title">الخدمات</h4>
+                        <a href="#services" data-lang-key="footer_gas_delivery">توصيل الغاز</a>
+                        <a href="#services" data-lang-key="footer_water_tanker">صهاريج المياه</a>
+                        <a href="#services" data-lang-key="footer_sewage">خدمات الصرف الصحي</a>
+                        <a href="#services" data-lang-key="footer_moving">خدمات النقل</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4 data-lang-key="footer_company_title">الشركة</h4>
+                        <a href="#about" data-lang-key="footer_about_us">عنا</a>
+                        <a href="#contact" data-lang-key="footer_contact">اتصل بنا</a>
+                        <a href="#" data-lang-key="footer_privacy_policy">سياسة الخصوصية</a>
+                        <a href="#" data-lang-key="footer_terms_of_service">شروط الخدمة</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4 data-lang-key="footer_connect_title">تواصل</h4>
+                        <a href="#"><i class="fab fa-twitter"></i> <span data-lang-key="footer_twitter">تويتر</span></a>
+                        <a href="#"><i class="fab fa-linkedin"></i> <span data-lang-key="footer_linkedin">لينكد إن</span></a>
+                        <a href="#"><i class="fab fa-instagram"></i> <span data-lang-key="footer_instagram">انستغرام</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-lang-key="footer_copyright">&copy; 2024 لوجِس. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-lang-key="modal_welcome_title">مرحباً بك في لوجِس</h3>
+                <span class="close" onclick="hideLoginModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" onclick="showLogin()" data-lang-key="modal_login_tab">تسجيل الدخول</button>
+                    <button class="auth-tab" onclick="showRegister()" data-lang-key="modal_register_tab">التسجيل</button>
+                </div>
+                <div id="loginForm" class="auth-form">
+                    <input type="email" placeholder="البريد الإلكتروني" required data-lang-key="modal_email_placeholder">
+                    <input type="password" placeholder="كلمة المرور" required data-lang-key="modal_password_placeholder">
+                    <button class="btn-primary btn-full" onclick="login()" data-lang-key="modal_login_btn">تسجيل الدخول</button>
+                    <p class="auth-link" data-lang-key="modal_no_account">ليس لديك حساب؟ <a href="#" onclick="showRegister()" data-lang-key="modal_register_here">سجل هنا</a></p>
+                </div>
+                <div id="registerForm" class="auth-form" style="display: none;">
+                    <input type="text" placeholder="الاسم الكامل" required data-lang-key="modal_full_name_placeholder">
+                    <input type="email" placeholder="البريد الإلكتروني" required data-lang-key="modal_email_placeholder_reg">
+                    <input type="tel" placeholder="رقم الهاتف" required data-lang-key="modal_phone_placeholder">
+                    <input type="password" placeholder="كلمة المرور" required data-lang-key="modal_password_placeholder_reg">
+                    <input type="password" placeholder="تأكيد كلمة المرور" required data-lang-key="modal_confirm_password_placeholder">
+                    <button class="btn-primary btn-full" onclick="register()" data-lang-key="modal_register_btn">التسجيل</button>
+                    <p class="auth-link" data-lang-key="modal_already_account">هل لديك حساب بالفعل؟ <a href="#" onclick="showLogin()" data-lang-key="modal_login_here">سجل الدخول هنا</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
